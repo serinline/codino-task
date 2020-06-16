@@ -26,14 +26,6 @@ public class Dog extends Entity {
         this.setOwner(owner);
     }
 
-//    public static Dog dogWithVaccineAndParentID(long id, String name, int age, boolean vaccine, long parentId){
-//        return new Dog(id, name, age, vaccine, parentId);
-//    }
-//
-//    public static Dog dogWithOwner(long id, String name, int age, String owner){
-//        return new Dog(id, name, age, owner);
-//    }
-
     private void setParentId(long parentId) {
         this.parentId = parentId;
     }

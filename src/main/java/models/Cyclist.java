@@ -28,14 +28,6 @@ public class Cyclist extends Entity {
         this.setParentId(parentId);
     }
 
-//    public static Cyclist cyclistCompetition(long id, String name, String record, int age, long parentId){
-//        return new Cyclist(id, name, record, age, parentId);
-//    }
-//
-//    public static Cyclist cyclistStartList(long id, String name, int age, String city){
-//        return new Cyclist(id, name, age, city);
-//    }
-
     private void setCity(String city) {
         this.city = city;
     }
