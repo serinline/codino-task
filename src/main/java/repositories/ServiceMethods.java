@@ -6,8 +6,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.groupingBy;
-
 
 class ServiceMethods {
 
@@ -27,12 +25,18 @@ class ServiceMethods {
         switch (value){
             case 1:
                 printFirstTenElements(objects);
+                break;
             case 2:
                 printNumberOfElements(calculateNumberOfElements(objects));
+                break;
             case 3:
                 printValuesWithSpecificIds(objects, secArg);
+                break;
             case 4:
                 printMapWithSpecificValues(countNames(objects), 100);
+                break;
+            case 5:
+                printAverage(calculateAverage(objects));
         }
     }
 
@@ -62,15 +66,24 @@ class ServiceMethods {
 
     private static Map<? extends Entity, Integer> countNames(Stream s){
         return (Map<? extends Entity, Integer>) s
-                .collect(groupingBy(Entity::getName, Collectors.counting()));
+                .collect(Collectors.groupingBy(Entity::getName, Collectors.counting()));
     }
 
-    private static void printMapWithSpecificValues(Map<? extends Entity, Integer> map, int quantity){
-        map.forEach((key, value) -> {
-            if(value > quantity)
-            System.out.println("Name: " + key.getName() + " : " + value);
-        });
+    private static void printMapWithSpecificValues(Map<? extends Entity, Integer> map, int frequency) {
+        for (Map.Entry<? extends Entity, Integer> entry : map.entrySet()) {
+            if (Integer.parseInt(String.valueOf(entry.getValue())) > frequency)
+                System.out.println("Name: " + entry.getKey() + ", frequency : " + entry.getValue());
+        }
     }
 
+    private static double calculateAverage(Stream s){
+        return s.filter(Entity.class::isInstance)
+                .mapToDouble(x -> ((Entity) x).getAge())
+                .average()
+                .getAsDouble();
+    }
 
+    private static void printAverage(double avg){
+        System.out.println("Average of elements is: " + avg);
+    }
 }
