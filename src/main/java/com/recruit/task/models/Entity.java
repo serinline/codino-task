@@ -1,4 +1,4 @@
-package models;
+package com.recruit.task.models;
 
 import com.opencsv.bean.CsvBindByName;
 

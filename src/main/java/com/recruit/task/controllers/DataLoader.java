@@ -1,4 +1,4 @@
-package controllers;
+package com.recruit.task.controllers;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;

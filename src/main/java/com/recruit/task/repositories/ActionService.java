@@ -1,9 +1,9 @@
-package repositories;
+package com.recruit.task.repositories;
 
-import controllers.DataLoader;
-import models.Citizen;
-import models.Cyclist;
-import models.Dog;
+import com.recruit.task.controllers.DataLoader;
+import com.recruit.task.models.Citizen;
+import com.recruit.task.models.Cyclist;
+import com.recruit.task.models.Dog;
 
 import java.util.stream.Stream;
 

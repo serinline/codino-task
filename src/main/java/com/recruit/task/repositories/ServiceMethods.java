@@ -1,6 +1,6 @@
-package repositories;
+package com.recruit.task.repositories;
 
-import models.Entity;
+import com.recruit.task.models.Entity;
 
 import java.util.Map;
 import java.util.stream.Collectors;
